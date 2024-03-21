@@ -1,3 +1,4 @@
+![KanaChord_glamor_off_raw_image](https://github.com/maccody/KanaChord/assets/17059321/67d361ec-7e63-4fbc-8c38-eedcb3a436c4)
 # KanaChord Keyboard (かな・コード・キーボード)
 ## Overview
 KanaChord Keyboard is an auxiliary keyboard that works in parallel with a standard English keyboard and generates Unicode keyboard macros to render Japanese Kana characters.  The Japanese writing system consists of three components: Kanji, Hiragana, and Katakana. Kanji consists of Chinese logography and conveys main ideas and names in sentences, e.g., 私, 東京, 何 (‘I’, ‘Tokyo’, ‘what’).  There are thousands of unique Kanji characters.  Hiragana consists of 48 syllabic characters that are used for some words of Japanese origin and grammatical sentence fragments, e.g., あなた, これ, の (‘you’, ‘this’, possessive particle).  Katakana also consists of 48 syllabic characters that are used for foreign loan words and names, e.g., テーブル, クッキー, マック (‘table’, ‘cookie’, ‘Mac’).  The table below shows the syllabary of Hiragana and Katakana, known collectively as the Kana.
@@ -18,39 +19,39 @@ The KanaChord Keyboard software includes dynamic key coloring that provides indi
 - Small characters, a.k.a. chiisai (小), also used to ‘shift’ to alternate punctuation characters.
 
 Punctuation keys on the top two rows of the right keypad are also normally white:
-- Continuation and separation characters (ー, ・ ),
-- Sentence pausing and ending characters (、,。, ! , ?),
+- Vertical iteration mark (〳,〴,〵), continuation mark (ー), and separation (・) characters ,
+- Sentence pausing (、) and ending characters (。, ! , ?),
 - Space and ellipsis (…) characters,
-- Commonly-used quotation, bracket, and special characters.
+- Commonly-used quotation (「, 」,『, 』), bracket (【, 】,〈, 〉), and special (〜,※) characters.
 
-The Kana and iteration mark (ゝ,〳,ゞ,〴,ヽ,ヾ) keys are green for Hiragana mode or blue for Katakana mode, as selected by the mode key (ひカ) at upper right-hand corner of the right keypad.
-![20230318_205640](https://github.com/maccody/KanaChord/assets/17059321/ff97c014-84e4-4272-921e-25d34306a08e)
-![20230318_205708](https://github.com/maccody/KanaChord/assets/17059321/13aefc38-7ce3-475f-89a3-238944a63125)
+The Kana and horizontal iteration mark (ゝ,ゞ,ヽ,ヾ) keys are green for Hiragana mode or blue for Katakana mode, as selected by the mode key (ひカ) at upper right-hand corner of the right keypad.
+![KanaChord_installed_grn_raw_image](https://github.com/maccody/KanaChord/assets/17059321/3a17a59e-6eac-444b-ad85-4f37417a99bd)
+![KanaChord_installed_blu_raw_image](https://github.com/maccody/KanaChord/assets/17059321/413b64ec-08cc-4fc5-b94d-b1deb5d3c5a5)
 
-Illustration of keyboard error with press of ! and 'o' keys
-![20230322_200831](https://github.com/maccody/KanaChord/assets/17059321/178542a7-6032-462a-81f3-f55750371a6d)
+Illustration of keyboard error with press of ! and あ keys
+![KanaChord_error_1_raw_image](https://github.com/maccody/KanaChord/assets/17059321/348eb920-2544-4226-9154-31b52eb9bd28)
 
 Illustration of keyboard error with press of ﾞ, な, and あ keys
-![20230322_205141](https://github.com/maccody/KanaChord/assets/17059321/4bdc44d7-9c5f-4fe7-92b0-0d6acc72a206)
+![KanaChord_error_2_raw_image](https://github.com/maccody/KanaChord/assets/17059321/d5fd2552-6f4e-4529-b42b-5fbdd9a5a35b)
 
 ## Keyboard Electronics
 KanaChord Keyboard uses following electronics parts:
-- [Adfruit](https://www.adafruit.com) [Itsy Bitsy 32u4 5V](https://www.adafruit.com/product/3677) microcontroller
+- Raspberry Pi Pico microcontroller
 - [Adfruit](https://www.adafruit.com) [NeoKey 5x6 Ortho Snap-Apart Mechanical Key Switches w/ NeoPixel - For MX Compatible Switches](https://www.adafruit.com/product/5157)
 - Cherry MX mechanical key switches [e.g., Cherry MX Brown Switches](https://www.cherrymx.de/en/cherry-mx/mx-original/mx-brown.html)
-- 0.1" Spacing Row Right Angle Headers (15 pins required, not counting spairs) [e.g., Schmartboard brand](https://schmartboard.com/qty-10-0-1-spacing-40-single-row-right-angle-headers-920-0076-01/)
-- Nine-position ITT connector shell (1 required) 
-- Six-position ITT connector shell (1 required)
-- Five-position ITT connector shell (2 required)
+- 0.1" Spacing Row Right Angle Headers (27 pins required, not counting spairs) [e.g., Schmartboard brand](https://schmartboard.com/qty-10-0-1-spacing-40-single-row-right-angle-headers-920-0076-01/)
+- Seven-position ITT connector shell (2 required) 
+- Five-position ITT connector shell (3 required)
+- Four-position ITT connector shell (1 required)
 - Three-position ITT connector shell (1 required)
-- Female crimp contact pins (23 required, not counting spares)
+- Female crimp contact pins (27 required, not counting spares)
 - Male crimp contact pins (5 required, not counting spares)
 - USB A to USB Micro B cable
 
 Below is an (admittedly crude) schematic of the wiring of the keyboard and the connectors:
 ![KanaChord_keyboard_circuit](https://github.com/maccody/KanaChord/assets/17059321/051a43f7-1a26-48e3-bedd-93266b0b7eaa)
 
-The numbering on the connectors corresponds to the digital pin (green) numbers on the Itsy Bitsy 32u4 5V board.  The right-angle headers are soldered into these positions on the Itsy Bitsy board.
+The numbering on the connectors corresponds to the digital pin (green) numbers on the Pico board.  The right-angle headers are soldered into these positions on the Pico board.
 ![ItsyBitsy32u4-5V_Pinout](https://github.com/maccody/KanaChord/assets/17059321/368507ac-0de2-422d-badb-0200d922d985)
 
 Here is a photo of the prototype assembly used durring initial KanaChord keyboard code development.
