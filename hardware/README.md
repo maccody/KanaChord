@@ -20,12 +20,23 @@ KanaChord Keyboard uses following electronics parts:
 
 ## Keyboard Schematics
 Below is a pictorial schematic of the keypad portion of the KanaChord keyboard.
-![Keypad_Schematic](https://github.com/maccody/KanaChord/assets/17059321/c248bed6-f632-452f-8a74-8115157004ea)
+![Keypad_Schematic](https://github.com/maccody/KanaChord/assets/17059321/e88566f6-8786-4128-a668-2d8d51245a2b)
+
 While the Neopixels of the Ortho Snap-Apart board can opperate at 3.3 Volts, the 3.3-Volt regulator on the Pico cannot supply enough current.  Therefore, the Neopixels are powered by the Pico's 5-Volt VSYS output.  Consequently, a unidirectional level shifter is used to convert the low-voltage Neopixel signal, NP(LV), to a high-voltage Neopixel, NP(HV).  The BC547 and resistors are used to implement the unidirectional level shifter circuit.
 
 Below is a pictorial schematic of the Raspberry Pi Pico portion of the KanaChord keyboard.
-![Pico_Schematic](https://github.com/maccody/KanaChord/assets/17059321/dfdb0b1d-8bab-49b1-8f25-17d24acd65c2)
+![Pico_Schematic](https://github.com/maccody/KanaChord/assets/17059321/c55b775b-cf49-4f5c-ba6d-753b1c51984f)
+
 The right-angle header pins are soldered in 'gull-wing' fashion on pins 1 through 25 and 36 through 39 of the Pico.  The slide switch is not soldered directly to the Pico.  Rather, the wires soldered to the switch have female connector pins crimped on and placed within a three-position connector shell.  During final assembly, the connector will be placed on the header pins at positions 22 through 24.
+
+Left keypad wiring
+![left_keyboard_wiring](https://github.com/maccody/KanaChord/assets/17059321/9d1dbdbe-8107-420e-a732-3e044da0dc36)
+
+
+
+Right keypad wiring
+![right_keyboard_wiring](https://github.com/maccody/KanaChord/assets/17059321/4543c96b-0231-4bb2-8c08-8ce42945edf8)
+
 
 
 ## 3D-Printed Enclosure
