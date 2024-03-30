@@ -10,10 +10,10 @@ KanaChord Keyboard uses following electronics parts:
 - 1 x 6.8 Kohm 1/8 Watt resistor
 - 1 x Three-position (NC-NO-NC) slide switch (e.g., E-Switch Slide Switches 500SSP3S2M1QEB, Mouser 612-500SSP3S2M1QEB)
 - 27 x 0.1" Spacing Row Right Angle Headers (does not count spairs) [e.g., Schmartboard brand](https://schmartboard.com/qty-10-0-1-spacing-40-single-row-right-angle-headers-920-0076-01/)
-- 2 x Seven-position ITT connector shell - Found in Adafruit [Large Single Row Housing Pack](https://www.adafruit.com/product/3146)
-- 3 x Five-position ITT connector shell - Found in Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145)
-- 1 x Four-position ITT connector shell - Found in Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145)
-- 1 x Three-position ITT connector shell - Found in Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145)
+- 2 x Seven-position ITT connector shell - (e.g., Adafruit [Large Single Row Housing Pack](https://www.adafruit.com/product/3146))
+- 3 x Five-position ITT connector shell - (e.g., Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145))
+- 1 x Four-position ITT connector shell - (e.g., Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145))
+- 1 x Three-position ITT connector shell - (e.g., Adafruit [Small Single Row Wire Housing Pack](https://www.adafruit.com/product/3145))
 - 27 x Female crimp contact pins (does not count spares)
 - 5 x Male crimp contact pins (does not count spares)
 - 1 x 12 inches of Forty-conductor ribbon cable 
@@ -23,12 +23,15 @@ KanaChord Keyboard uses following electronics parts:
 Below is a pictorial schematic of the keypad portion of the KanaChord keyboard.
 ![Keypad_Schematic](https://github.com/maccody/KanaChord/assets/17059321/e88566f6-8786-4128-a668-2d8d51245a2b)
 
-While the Neopixels of the Ortho Snap-Apart board can opperate at 3.3 Volts, the 3.3-Volt regulator on the Pico cannot supply enough current.  Therefore, the Neopixels are powered by the Pico's 5-Volt VSYS output.  Consequently, a unidirectional level shifter is used to convert the low-voltage Neopixel signal, NP(LV), to a high-voltage Neopixel, NP(HV).  The BC547 and resistors are used to implement the unidirectional level shifter circuit.
+While the Neopixels of the Ortho Snap-Apart board can opperate at 3.3 Volts, the 3.3-Volt regulator on the Pico cannot supply enough current.  Therefore, the Neopixels are powered by the Pico's 5-Volt VSYS output.  Consequently, a unidirectional level shifter is used to convert the low-voltage Neopixel signal, NP(LV), to a high-voltage Neopixel signal, NP(HV).  The BC547 and resistors are used to implement the unidirectional level shifter circuit.
 
 Below is a pictorial schematic of the Raspberry Pi Pico portion of the KanaChord keyboard.
 ![Pico_Schematic](https://github.com/maccody/KanaChord/assets/17059321/c55b775b-cf49-4f5c-ba6d-753b1c51984f)
 
-The right-angle header pins are soldered in 'gull-wing' fashion on pins 1 through 25 and 36 through 39 of the Pico.  The slide switch is not soldered directly to the Pico.  Rather, the wires soldered to the switch have female connector pins crimped on and placed within a three-position connector shell.  During final assembly, the connector will be placed on the header pins at positions 22 through 24.
+The right-angle header pins are soldered in 'gull-wing' fashion to pins 1 through 20, 21 through 25, and 36 through 39 of the Pico.  Note that the slide switch is not soldered directly to the Pico.  Instructions found in the Electrical Assembly will describe the wiring harness that is used.
+
+## Electrical Assembly 
+Before assembly, the shap-apart keyboard must be broken into two pieces to form two PCBs (Printed Circuit Boards) for the left and right keyboard assemblies.  As shown in the pictoral schematic above and the pictures below, cut apart the keyboard so that the bottom two rows form the left keypad and the top three rows form the right keypad.  Rather than actually bending the PCB to snap it, it is recommended to use a thin saw to cut the bridges between the rows.  DO NOT cut off the blank sections on the top and bottom of the PCB, as the mounting holes will be used to help position the keypads in the keyboard enclosure.
 
 The wiring of the left keypad assembly is shown in the picture below.  Take note the direction and length of the wires that extend from the left-hand keypad PCB. ![left_keyboard_wiring](https://github.com/maccody/KanaChord/assets/17059321/9d1dbdbe-8107-420e-a732-3e044da0dc36)
 
@@ -45,23 +48,21 @@ Next, create the female keypad interconnect harness using five (5) female crimp 
 
 Now, cut a four-conductor section of ribbon cable with a length of approximatly 28 cm (11 inches).  This will be the row cable for the right keypad.  Separate out the individual conductors, attach four (4) female crimp terminals, and insert the terminals into a five (5) terminal connector shell.  Note that there will be an unused place between the terminal pins for Rows 0 and 1, which is Ground Pin 18 on the Pico. Note that three of the ribbon cable conductors attach to the Row solder pads on the right keyboard PCB, while one conductor attaches to the signal input of the level shifter circuit. Note that during installation, this cable will fold over to attach to Pins 16 through 20 on the Pico.
 
-Assmble the unidirectional level shifter circuit on a small piece of prototyping board with solder pads or as otherwise desired.  The idea is to keep the resulting assembly small and relatively flat.  In the implementation shown in the picture, judicious application of heat-shrink tubing was performed to prevent short circuits.  The circuit is wired into a power harness, which is approximately 10 cm (3.5 inches) long.  The power harness has three (3) female crimp connectors that are inserted into a four (4) terminal connector shell.  Note that there will be an unused place between the Ground and 3V3(OUT) pins, which is the 3.3V_EN pin 37 on the Pico.  Consult the pictorial schematic above for the wiring of the level shifter circut and the power harness 5V and Ground to the right keyboard PCB. During installation, the power harness connector will attach to Pins 36 through 39 on the Pico. This completes the wiring of the right keypad assembly.
+Assmble the unidirectional level shifter circuit on a small piece of prototyping board with solder pads or as otherwise desired.  The idea is to keep the resulting assembly small and relatively flat.  In the implementation shown in the picture, judicious application of heat-shrink tubing was performed to prevent short circuits.  The circuit is wired into the power harness, which is approximately 10 cm (3.5 inches) long.  The power harness has three (3) female crimp connectors that are inserted into a four (4) terminal connector shell.  Note that there will be an unused place between the Ground and 3V3(OUT) pins, which is the 3.3V_EN pin 37 on the Pico.  Consult the pictorial schematic above for the wiring of the level shifter circiut, with the output of the level shifter connected to the Neopixel input and the power harness 5V and Ground to the right keyboard PCB. During installation, the power harness connector will attach to Pins 36 through 39 on the Pico. This completes the wiring of the right keypad assembly.
+
+The macro mode slide switch is soldered to a three-wire harness that is 5 cm (2 inches) long.  The harness has three (3) female connector pins crimped on and placed within a three-position connector shell.  During final assembly, the connector will be placed on the header pins at positions 22 through 24.
 
 ## 3D-Printed Keycaps
 The keycaps for the KanaChord Keyboard were created in TinkerCAD, as shown in the illustration below.  The STL files for the left-hand and right-hand keycap sets can be viewed with the Github STL viewer by clicking on the STL files listed above.
 ![KanaChord_Keycaps](https://github.com/maccody/KanaChord/assets/17059321/93afd88c-73b2-4089-8cf6-816c1f5a1629)
 
-The blank keycap from makerhack's (Chris Garrett) [Custom Cherry MX Keycaps](https://www.thingiverse.com/thing:4702109) was used as the source keycap.  It is licensed under the [Creative Commons - Attribution license](https://creativecommons.org/licenses/by/4.0/).  The Kana and special charaters are text objects coverted to TinkerCAD 'holes' that were combined with each blank keycap to form insets.  The keycaps were sliced with Cura using Standard Quality (0.2mm), with 20% infill using the gyroid infill pattern.  The keycaps were printed with untinted PLA to allow the Neopixels to shine through.  After printing, the insets were filled with black acrylic paint, followed by a coat of flat, clear enamel paint.
-
-
-
+The blank keycap from makerhack's (Chris Garrett) [Custom Cherry MX Keycaps](https://www.thingiverse.com/thing:4702109) was used as the source keycap.  The design is licensed under the [Creative Commons - Attribution license](https://creativecommons.org/licenses/by/4.0/). The Kana and special charaters are text objects coverted to TinkerCAD 'holes' that are combined with blank keycaps to form insets. The keycaps were sliced with Cura using Standard Quality (0.2mm), with 20% infill using the gyroid infill pattern. The keycaps were printed with untinted PLA to allow light from the Neopixels to shine through. After printing, the insets were filled with black acrylic paint, followed by a coat of flat, clear enamel paint.
 
 ## 3D-Printed Enclosure
-Enclosure for the KanaChord Keyboard was also created in TinkerCAD, as shown in the illustrations below.  The STL files for the individual components of the enclosure can be viewed with the Github STL viewer by clicking on the STL files listed above.
+The enclosure for the KanaChord Keyboard was also created in TinkerCAD, as shown in the illustrations below.  The STL files for the individual components of the enclosure can be viewed with the Github STL viewer by clicking on the STL files listed above.
 ![TinkerCAD_Keyboard_Case](https://github.com/maccody/KanaChord/assets/17059321/fc7e1685-39a2-46db-be0c-d81ea0488f06)
 
-The left and right keycase enclosures were created using 0707070user's OpenSCAD program [Customizable snap-fit electronics project box enclosure](https://www.thingiverse.com/thing:2866563). It is licensed under the [Creative Commons - Attribution license](https://creativecommons.org/licenses/by/4.0/). The enclosure components are flipped so tha the lids now act as baseplates for the keyboard enclosure.  The enclosures were edited to crete the holes of the integral keyplates, the switch and Pico mounts, and hole for the USB cable.  
-
+The left and right keycase enclosures were created using 0707070user's OpenSCAD program [Customizable snap-fit electronics project box enclosure](https://www.thingiverse.com/thing:2866563). It is licensed under the [Creative Commons - Attribution license](https://creativecommons.org/licenses/by/4.0/). The enclosure components are flipped so tha the lids now act as baseplates for the keyboard enclosure. The enclosures were edited to create the holes of the integral keyplates, the switch and Pico mounts, and pass-through hole for the keyboard feet and the USB cable.  
 
 
 The enclosure was designed in halves to fit on the build plate of a Crealty Ender 3 Pro 3D printer.  Keyed mating components were included to ensure secure assembly.  Two feet, one shown on the lower left of the enclosure illustration, are printed and inserted into the holes in the baseplate during assembly.  These provide some ergonomic tilt to the KanaChord Keyboard in alignment with the main keyboard.  Note that the green rectangle on the baseplate indicates where the microcontroller is attached and is not part of the baseplate design.
