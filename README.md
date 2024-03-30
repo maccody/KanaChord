@@ -1,7 +1,7 @@
 ![KanaChord_glamor_off](https://github.com/maccody/KanaChord/assets/17059321/b76565f8-2dac-4850-b650-6bb7f1f815eb)
-# KanaChord Keyboard (かな・コード・キーボード)
+# KanaChord Keyboard (かなコード　キーボード)
 ## Overview
-KanaChord is an auxiliary keyboard that works in parallel with a standard English keyboard and generates Unicode keyboard macros to render Japanese Kana characters.
+KanaChord is an auxiliary keyboard that works in parallel with a standard English keyboard and generates Unicode keyboard macros to render Japanese Kana characters.  This allows the user to immediatly start typing in the Japanese Kana, rather that installing special software and switching lanuage input modes on a single keyboard.  KanaChord can assist the Japanese learner by providing a means to improve their skills by writing in Japanese, in addition to reading and speaking.
 
 The Japanese writing system consists of three components: Kanji, Hiragana, and Katakana. Kanji consists of Chinese logography and conveys main ideas and names in sentences, e.g., 私, 東京, 何 (‘I’, ‘Tokyo’, ‘what’).  There are thousands of unique Kanji characters.  Hiragana consists of 48 syllabic characters that are used for some words of Japanese origin and grammatical sentence fragments, e.g., あなた, これ, の (‘you’, ‘this’, possessive particle).  Katakana also consists of 48 syllabic characters that are used for foreign loan words and names, e.g., テーブル, クッキー, マック (‘table’, ‘cookie’, ‘Mac’).  The table below shows the syllabary of Hiragana and Katakana, known collectively as the Kana.
 ![Kana Table](https://github.com/maccody/KanaChord/assets/17059321/9cd2e0d3-35b2-4e8d-afc0-48902b5663b5)
