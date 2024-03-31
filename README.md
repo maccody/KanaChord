@@ -26,16 +26,16 @@ The Kana and horizontal iteration mark (ゝ,ゞ,ヽ,ヾ) keys are green for Hira
 
 Feedback is provided to the user for incorrect key combinations by changing those keys red.  Releasing the keys will cause the keys to revert to their original colors.  Some examples are provded below:
 
-Keyboard error lighting with press of ! and あ key combination.
+Keyboard error lighting with press of ! and お key combination.
 ![KanaChord_error_1](https://github.com/maccody/KanaChord/assets/17059321/a320b713-3092-48ac-b89c-a8866d4bee1f)
 
 Keyboard error lighting with press of ﾞ, な, and あ key combination.
 ![KanaChord_error_2](https://github.com/maccody/KanaChord/assets/17059321/92adddb6-386d-42b5-8858-f299eb6bf426)
 
-A slide switch above the か key provides user-selectable mode of Unicode key sequences to support different computer platforms:
-- Unicode hexidecimal value, followed by Alt-X: Supports Microsoft Word and Wordpad, and LibreOffice Writer.
-- Ctrl-Shift-u, followed by four-character Unicode hexidecimal value: Supports Linux applications like LibreOffice Writer and Firefox.
-- Option key, followed by Unicode hexidecimal value: Support MacOS applications (not yet tested).
+A slide switch above the か key provides three user-selectable Unicode key sequences to support different computer platforms:
+- Four-characer hexidecimal Unicode value, followed by Alt-X: Supports Microsoft Word and Wordpad, and LibreOffice Writer.
+- Ctrl-Shift-u, followed by four-character hexidecimal Unicode value: Supports Linux applications like LibreOffice Writer and Firefox.
+- Option key, followed by four-character hexidecimal Unicode value: Support MacOS applications (not yet tested).
 
 ## Implementation Overview
 The primary electical componets of the KanaChord Keyboard are a Raspberry Pi Pico (RP2040) microcontroller, an Adfruit NeoKey 5x6 Ortho Snap-Apart keyboard PCB, and thirty Cherry MX mechanical key switches.  The keycaps and keyboard enclosure are 3D printed designs created with TinkerCAD.  Blank keycaps and an OpenSCAD tight-fit box generator were found on Thingiverse.  No special hardware, such as screws are needed to mount the electrical components and assemble the enclosure.  Details on the electronics, enclosure, and their assembly can be found in the hardware folder.
