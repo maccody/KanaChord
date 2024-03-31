@@ -64,29 +64,34 @@ The enclosure for the KanaChord Keyboard was also created in TinkerCAD, as shown
 
 The left and right keycase enclosures were created using 0707070user's OpenSCAD program [Customizable snap-fit electronics project box enclosure](https://www.thingiverse.com/thing:2866563). It is licensed under the [Creative Commons - Attribution license](https://creativecommons.org/licenses/by/4.0/). The enclosure components are flipped so tha the lids now act as baseplates for the keyboard enclosure. The enclosures were edited to create the holes of the integral keyplates, the switch and Pico mounts, and pass-through hole for the keyboard feet and the USB cable.  
 
-
+REMOVE?
 The enclosure was designed in halves to fit on the build plate of a Crealty Ender 3 Pro 3D printer.  Keyed mating components were included to ensure secure assembly.  Two feet, one shown on the lower left of the enclosure illustration, are printed and inserted into the holes in the baseplate during assembly.  These provide some ergonomic tilt to the KanaChord Keyboard in alignment with the main keyboard.  Note that the green rectangle on the baseplate indicates where the microcontroller is attached and is not part of the baseplate design.
+REMOVE?
 
-
-## KanaChord Assembly
+## Mechanical Assembly
 
 ### Applying PCB Cushions
+The keypad PCBs are connected to the key switches via sockets.  To prevent the PCBs from coming loose from the key switches, supports are provided to keep the PCBs in place.  These supports are shown in the photo below.
 ![foam_pads](https://github.com/maccody/KanaChord/assets/17059321/d07042ee-55a1-4edd-b80b-6a1c03b1eda2)
 
-
+The height of each support is such that there is about a 2mm (0.1 inch) gap from the top of the supports to the underside of the PCBs. To fill in the gap, a small disc of 2mm-thick craft foam is attached to top of each support with double-sided adhesive tape.  One way to make the discs is to apply a strip of double-sided tape to a piece of craft foam.  A single-hole handpunch is used to create the discs with the adhesive tape also cut to the same size as the disc.  Eight (8) discs will be needed for the supports.
 
 ### Mounting the Raspberry Pi Pico
-![pico_mounted_part_1](https://github.com/maccody/KanaChord/assets/17059321/215b43be-626e-4dd2-926f-f6f00e13c8eb)![pico_mounted_part_2](https://github.com/maccody/KanaChord/assets/17059321/30025973-4183-44a0-b6ef-df61fa7475e0)
+The Pico is mounted to the left keyboard base by first inserting the end with the USB connector under the bridge of the processor mount at the edge of the keyboard base. Once this is done, push the opposite end of the Pico down into the depression of the processor mount. Finally, slide the retaining clip into the notches in front of the processor mount until the tab of the retaining clip is securely on top of the end of the Pico.
+![pico_mounted_combined](https://github.com/maccody/KanaChord/assets/17059321/105a1cb6-cd94-4ed0-8808-bd732fdcb71c)
 
 
 
 ### Mounting the Macro Mode Switch
+![switch_install_combined](https://github.com/maccody/KanaChord/assets/17059321/1a2de989-ea77-4c17-b30d-24661757cbf3)
 
 
 ### Pre-stressing the Key Switch Sockets
+![key_switch_socket_breakin](https://github.com/maccody/KanaChord/assets/17059321/60a5c4f5-f374-496d-b8ca-052d5c9909b9)
 
 
 ### Mounting Keyboard PCBs to Enclosures
+![key_switch_hole_cleanup](https://github.com/maccody/KanaChord/assets/17059321/e43d93fc-40ae-4499-833d-48a221396bab)
 
 
 
