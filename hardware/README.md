@@ -80,22 +80,38 @@ The height of each support is such that there is about a 2mm (0.1 inch) gap from
 The Pico is mounted to the left keyboard base by first inserting the end with the USB connector under the bridge of the processor mount at the edge of the keyboard base. Once this is done, push the opposite end of the Pico down into the depression of the processor mount. Finally, slide the retaining clip into the notches in front of the processor mount until the tab of the retaining clip is securely on top of the end of the Pico.
 ![pico_mounted_combined](https://github.com/maccody/KanaChord/assets/17059321/105a1cb6-cd94-4ed0-8808-bd732fdcb71c)
 
-
-
 ### Mounting the Macro Mode Switch
+The Macro Mode slide switch is placed into the left keyboard enclosure such that the switch handle passes through the hole in the enclosure and the tabs on each end of the switch sit around the two retaining pegs.  Once in place, the switch clip is slid into place around the switch.  Make a note of the order of the wires on the switch and connector, so that the connector is properly connected to the Pico later.
 ![switch_install_combined](https://github.com/maccody/KanaChord/assets/17059321/1a2de989-ea77-4c17-b30d-24661757cbf3)
 
-
-### Pre-stressing the Key Switch Sockets
+### Break-in the Key Switch Sockets
+Prior to mounting the key switches and keypad PCBs, it is highly recommended to 'break in' the key sockets on the keypads.  This is done by inserting a key switch into each key socket at least once.  The key sockets are a little 'stiff' with the first insertion of a switch.  Doing this will make it a bit easier to mount the key switches into the keypads.
 ![key_switch_socket_breakin](https://github.com/maccody/KanaChord/assets/17059321/60a5c4f5-f374-496d-b8ca-052d5c9909b9)
 
-
-### Mounting Keyboard PCBs to Enclosures
+### Preparing the Enclosures for the Key Switches
+It may be necessary to slightly widen the keyplate holes on the enclosures prior to attaching the key switchs and keypads.  For any give hole, try to insert a key switch without any widening.  If a switch plugs in easily, then no widening is needed.  For those holes needing widening, use a flat-sided jewler's file to slightly widen all sides of the hole.  In practice, it should not take much filing to allow a switch to plug in easily.
 ![key_switch_hole_cleanup](https://github.com/maccody/KanaChord/assets/17059321/e43d93fc-40ae-4499-833d-48a221396bab)
 
+### Mounting Key Switches and Keypad PCBs to the Enclosures
+**NOTE: It has been determined that the positions of the mounting holes on the keypad PCBs can be a bit variant.  If it is found that the kepads will not fit on the mounting posts, it is recommended that the posts be removed.  This results in making it a bit more difficult at the start to align the keypad PCBs with the holes and key switches.**
 
+First, slide on the keyboard bracket on to the right keyboard enclosure.  Make sure that the bracket is inserted such that the side with the tabs flush to the bracket face is inserted first.  Next, place the three-row keypad PCB into right keyboard enclosure. The female keyboard interconnect connector, the column and row cables, and the power harness should slide through the opening in the keyboard bracket. Use the mounting pins, if present, to align the key sockets with the holes of the integral key plate.
 
+Start at one end of the enclosure and insert a key switch through the hole of the keyplate into the socket of the PCB. Place a finger against the key socket, on the bottom side of the PCB, to support key switch insertion. Having a keycap on the switch will make it easier to press the switch in.  Once the switch is inserted, go to the opposite end and insert another key switch as before.  Doing this will stablize the PCB position for inserting the rest of the key switches.  Working from the ends towards the center of the enclosure, plug in more keys until all eighteen switched are plugged in.
 
+Now insert the left keypad PCB into the left keyboard enclosure.  As with the right keypad, align the key socket with the holes in the integral keyplate.  Insert the key switches, again working from both end of the enclosure to the center.  Once all of the key switches are inserted, slide the left keyboard enclosure onto the other side of the keyboard bracket.  While doing this, fold up the male keyboard connector to clear the bracket and then plug it into the female keyboard connector.
 
+After completing these steps the keyboard assembly show look as shown in the picture below.
+![keyboard_assembly](https://github.com/maccody/KanaChord/assets/17059321/83c0a5ad-44a8-42ec-afcd-39d6d5af297a)
+
+### Inserting Connectors onto the Pico
+Insert the power harness connector on to pins 36 through 39 on the Pico.  Make sure that the 3.3V wire is connected to 3V3(OUT) (pin 36), the ground wire is connected to GND (pin 38), and the 5V wire is connected to VSYS (pin 39). Then, connect the column cable for the left keypad to pin 1 through pin 7 on the Pico.  The Column 0 (C0) wire should be connected to pin 1.  The picture below shows how the connections should look.
+![cable_connect_part_1](https://github.com/maccody/KanaChord/assets/17059321/a164c81c-7ccb-4caa-93f0-04b173a59622)
+
+Next, insert the column cable for the right keypad to pin 9 through pin 15 on the Pico. The Column 6 (C6) wire should be connected to pin 9.  Then, connect the row cable for the right keypad to pin 16 through pin 20 on the Pico. The Row 2 (R2) wire should be connected to pin 16 and the Neopixel low voltage (NP(LV)) wire should be connected to pin 20. The picture below shows how the connections should look.  
+![cable_connect_part_2](https://github.com/maccody/KanaChord/assets/17059321/a8f703c2-fa7e-4c67-8b8e-f491b446ee3e)
+
+Finally, insert the connector for the Macro Mode switch onto pins 22 through 24 on the Pico.  Take note that the wires of the connector are oriented such that the slide switch grounds pin 22 when switch handle is pushed towards the center of the left keyboard enclosure and pin 24 is grounded when the switch handle is pushed towards the edge of the left keyboard enclosure. The picture below shows how the connections should look.  
+![cable_connect_part_3](https://github.com/maccody/KanaChord/assets/17059321/9dffbf51-4d9b-4b16-a860-91aff8ffa7bd)
 
 
