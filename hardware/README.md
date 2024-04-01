@@ -114,4 +114,11 @@ Next, insert the column cable for the right keypad to pin 9 through pin 15 on th
 Finally, insert the connector for the Macro Mode switch onto pins 22 through 24 on the Pico.  Take note that the wires of the connector are oriented such that the slide switch grounds pin 22 when switch handle is pushed towards the center of the left keyboard enclosure and pin 24 is grounded when the switch handle is pushed towards the edge of the left keyboard enclosure. The picture below shows how the connections should look.  
 ![cable_connect_part_3](https://github.com/maccody/KanaChord/assets/17059321/9dffbf51-4d9b-4b16-a860-91aff8ffa7bd)
 
+### Attach Keyboard Bases and Feet
+Now that the wiring is completed, the keyboard enclosure can be closed.  Place the right keyboard base onto the bottom of the right keyboard enclosure.  Make sure that wiring and level shifter do not interfere with the keypad PCB supports pushing up against the bottom of the right keypad.  The keyboard base is a press-fit design, so it should pop into place witout too much effort.  Now fold over the left keyboard base, making sure that the wiring does not interfere with the keypad PCB support pushing up against the bottom of the left keypad.  Snap the left keyboard base into place, like what was done with the right keyboard base. The assembly should appear as shown in the picture below.
+![keyboard_bases_attached](https://github.com/maccody/KanaChord/assets/17059321/39c30015-9bb8-4975-b9a6-fde4ab810ad8)
 
+Attach the three keyboard feet by sliding the attachment pegs into the holes and sliding the feet into the slots.  If desired the the rigt and left keyboard feet can be glued into place.  It is recommended not to glue the center foot, as doing so would make it difficult to disassembly the keyboard for maintenance or modification.
+keyboard_feet_attached_raw_image![keyboard_feet_attached](https://github.com/maccody/KanaChord/assets/17059321/9142edfb-f2ef-4cac-aa37-dc3f590769ca)
+
+This concludes the hardware construction of the KanaChord keyboard.  If not already done, program the Pico with the KanaChord software and put the keyboard to use?
