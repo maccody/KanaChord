@@ -24,3 +24,27 @@ The file kana.h contains C++ arrays containing the 16-bit Unicode values for Kan
 The arrays containing the Kana are grouped according Hiragana and Katakana character sets. Individual arrays represent unaugmented (base) characters and augmented characters, i.e., ten-ten, maru, and small (chiisai) characters. Each array is organized by ten 'consonants' (rows) and six 'vowels' (columns).  Special characters are also grouped according to Hiragana and Katakana character sets, although this results in most characters being duplicates in these sets. This was done to simplify the code used to access the arrays.  
 
 The function getKanaUnicode(), defined in kbd_mgt.cpp, takes inputs of kana mode, special character mode, shift mode, and index row and column to select a Unicode character value. If the selected Unicode value is 0x0000, then an illegal key has been selected.
+
+## Compiling and Uploading the KanaChord Keyboard Software
+First, start the Arduino IDE and click on Tools on the menubar and select Manage Libraries from the drop-down menu.  Install Earle Philhower's RP2040 Arduino board support package and the Arduino USB Keyboard emulation library.  Next, select Tools on the menubar and select Board from the drop-down menu.  Select 'Raspberry Pi RP2040 Boards' from the displayed cascade menu, and then 'Raspberry Pi Pico' from the next displayed cascade menu.
+
+Now that Pico board support is in place, adjust the board parameters as follows (also shown in the picture below):
+- Flash Size: "2MB (no FS)"
+- CPU Speed: "120 MHz"
+- Optimize: "Optimize More (-O2)"
+- RTTI: "Disabled"
+- Stack Protector: "Disabled"
+- C++ Exceptions: "Disabled"
+- Debug Port: "Disabled"
+- Debug Level: "None"
+- USB Stack: "Pico SDK"
+- IP/Bluetooth Stack: "IPv4 Only"
+- Upload Method: "Default (UF2)"
+
+![KanaChord_Setup](https://github.com/maccody/KanaChord/assets/17059321/dd18d9de-38a1-4cd9-aea7-08196af24291)
+
+Place the KanaChord Keyboard source files into a new directory named KanaChord. Load KanaChord with the Arduino IDE. Click the Verify button to ensure that the KanaChord source code compiles successfully. The compile status should be as shown in the picuture below.  If compiling fails, check that all needed files and libraries are installed and the configuration is correct.
+
+![KanaChord_compile](https://github.com/maccody/KanaChord/assets/17059321/49ebdb9e-be61-4de1-9e1e-69006fb8f8d3)
+
+Now, connect the Raspberry Pi Pico to the computer with a USB cable.  Click the Upload button to compile the KanaChord source code and upload the compiled binary to the Pico.  If the upload fails, make sure that the USB cable is securely connected to the Pico and the computer performing the programming. It may also be necessary to hold down the BOOTSEL button on the Pico while plugging the USB cable into the computer.
